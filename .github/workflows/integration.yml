@@ -56,5 +56,5 @@ jobs:
         # npm cli/npm install same thing
         run: npm ci
       - name: Build application
-        run: npm build
+        run: npm run-script build
 
