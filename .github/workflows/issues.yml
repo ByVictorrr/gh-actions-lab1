@@ -1,0 +1,12 @@
+name: Issue
+# manual trigger from the user
+on: issues
+jobs:
+  # this is the job name
+  lint:
+    # search github action runners
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Issue event info
+        run: echo "${{ toJson(github.event) }}"
+

@@ -1,0 +1,59 @@
+name: Integration
+# manual trigger from the user
+on: push
+jobs:
+  # this is the job name
+  lint:
+    steps:
+      # https://github.com/actions/checkout
+      # https://github.com/marketplace?category=&query=&type=actions&verification=
+      - name: Get Code on the runner
+        uses: actions/checkout@v3
+        # with: configures the action
+      - name: Install specific NodeJs Version
+        uses: actions/setup-node@v3
+        with:
+          # required for this project
+          node-version: '18'
+      - name: Install dependendencies
+        # npm cli/npm install same thing
+        run: npm ci
+      - name: Run Tests
+        run: npm lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/actions/checkout
+      # https://github.com/marketplace?category=&query=&type=actions&verification=
+      - name: Get Code on the runner
+        uses: actions/checkout@v3
+        # with: configures the action
+      - name: Install specific NodeJs Version
+        uses: actions/setup-node@v3
+        with:
+          # required for this project
+          node-version: '18'
+      - name: Install dependendencies
+        # npm cli/npm install same thing
+        run: npm ci
+      - name: Run Tests
+        run: npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/actions/checkout
+      # https://github.com/marketplace?category=&query=&type=actions&verification=
+      - name: Get Code on the runner
+        uses: actions/checkout@v3
+        # with: configures the action
+      - name: Install specific NodeJs Version
+        uses: actions/setup-node@v3
+        with:
+          # required for this project
+          node-version: '18'
+      - name: Install dependendencies
+        # npm cli/npm install same thing
+        run: npm ci
+      - name: Build application
+        run: npm build
+
