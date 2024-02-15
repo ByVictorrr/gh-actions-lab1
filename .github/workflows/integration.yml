@@ -33,7 +33,6 @@ jobs:
       - name: Install specific NodeJs Version
         uses: actions/setup-node@v3
         with:
-          # required for this project
           node-version: '18'
       - name: Install dependendencies
         # npm cli/npm install same thing
