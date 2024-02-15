@@ -18,8 +18,8 @@ jobs:
           node-version: '18'
       - name: Install dependendencies
         # npm cli/npm install same thing
-        run: npm ci
-      - name: Run Tests
+        run: npm install
+      - name: Run linter
         run: npm run lint
   test:
     runs-on: ubuntu-latest
