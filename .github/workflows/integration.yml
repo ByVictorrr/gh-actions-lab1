@@ -1,5 +1,4 @@
 name: Integration
-# manual trigger from the user
 on: push
 jobs:
   # this is the job name
